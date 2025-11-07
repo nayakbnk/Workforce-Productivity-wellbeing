@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Smart Shift Optimizer | MindEase AI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <i class="fas fa-brain"></i>
+        <span>MindEase<span class="ai-badge">AI</span></span>
+      </div>
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="digital-footprint.html" class="nav-link">Digital Footprint</a>
+        <a href="analytics.html" class="nav-link">Analytics</a>
+        <a href="optimizer.html" class="nav-link active">Optimizer</a>
+        <a href="statistics.html" class="nav-link">Statistics</a>
+      </div>
+      <button class="nav-toggle" id="navToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1 class="page-title">
+        <i class="fas fa-sync-alt"></i>
+        Smart Shift Optimizer
+      </h1>
+      <p class="page-subtitle">AI-powered shift swapping with automatic notifications to reduce burnout</p>
+    </div>
+  </section>
+
+  <!-- Optimizer Stats -->
+  <section class="section">
+    <div class="container">
+      <div class="optimizer-stats">
+        <div class="optimizer-stat">
+          <div class="optimizer-stat-value" id="swapCount">0</div>
+          <div class="optimizer-stat-label">Swaps Suggested</div>
+        </div>
+        <div class="optimizer-stat">
+          <div class="optimizer-stat-value" id="stressReduction">0%</div>
+          <div class="optimizer-stat-label">Avg Stress Reduction</div>
+        </div>
+        <div class="optimizer-stat">
+          <div class="optimizer-stat-value" id="balanceScore">0%</div>
+          <div class="optimizer-stat-label">Workload Balance</div>
+        </div>
+      </div>
+
+      <!-- How Notification System Works -->
+      <div class="notification-info">
+        <div class="notification-card">
+          <i class="fas fa-bell fa-3x"></i>
+          <h3>Automatic Notification System</h3>
+          <p>When high-stress employees are detected, the system automatically sends notifications to available, low-stress staff members for potential shift swaps. This proactive approach prevents burnout before it happens.</p>
+          <div class="notification-flow">
+            <div class="flow-step">
+              <i class="fas fa-exclamation-triangle"></i>
+              <span>Detect High Stress</span>
+            </div>
+            <i class="fas fa-arrow-right flow-arrow"></i>
+            <div class="flow-step">
+              <i class="fas fa-search"></i>
+              <span>Find Low-Stress Staff</span>
+            </div>
+            <i class="fas fa-arrow-right flow-arrow"></i>
+            <div class="flow-step">
+              <i class="fas fa-bell"></i>
+              <span>Send Notification</span>
+            </div>
+            <i class="fas fa-arrow-right flow-arrow"></i>
+            <div class="flow-step">
+              <i class="fas fa-check-circle"></i>
+              <span>Confirm Swap</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Swap Suggestions Grid -->
+      <div class="swap-grid" id="swapGrid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <i class="fas fa-brain"></i>
+            <span>MindEase<span class="ai-badge">AI</span></span>
+          </div>
+          <p>Privacy-first workforce wellbeing platform for Nordic healthcare organizations.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4>Product</h4>
+          <a href="digital-footprint.html">Digital Footprint</a>
+          <a href="analytics.html">Analytics</a>
+          <a href="optimizer.html">Optimizer</a>
+          <a href="statistics.html">Statistics</a>
+        </div>
+
+        <div class="footer-section">
+          <h4>Company</h4>
+          <a href="#">About Us</a>
+          <a href="#">Team</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <a href="mailto:hello@mindeaseai.com"><i class="fas fa-envelope"></i> hello@mindeaseai.com</a>
+          <a href="#"><i class="fas fa-phone"></i> +45 1234 5678</a>
+          <a href="#"><i class="fas fa-map-marker-alt"></i> Copenhagen, Denmark</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 MindEase AI. All rights reserved.</p>
+        <p>GDPR Compliant • Privacy-First • No Biometric Data</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toastContainer" class="toast-container"></div>
+  
+  <!-- Notification Modal -->
+  <div id="notificationModal" class="notification-modal">
+    <div class="notification-modal-content">
+      <div class="notification-modal-header">
+        <i class="fas fa-bell"></i>
+        <h3>Swap Notification Sent</h3>
+      </div>
+      <div class="notification-modal-body" id="notificationBody">
+        <!-- Content populated by JS -->
+      </div>
+      <button class="btn-primary" onclick="closeNotificationModal()">Close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

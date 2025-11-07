@@ -1,11 +1,282 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MindEase AI | Passive Burnout Detection Platform</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <i class="fas fa-brain"></i>
+        <span>MindEase<span class="ai-badge">AI</span></span>
+      </div>
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="digital-footprint.html" class="nav-link">Digital Footprint</a>
+        <a href="analytics.html" class="nav-link">Analytics</a>
+        <a href="optimizer.html" class="nav-link">Optimizer</a>
+        <a href="statistics.html" class="nav-link">Statistics</a>
+      </div>
+      <button class="nav-toggle" id="navToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="badge">
+          <i class="fas fa-shield-halved"></i>
+          Privacy-First AI
+        </div>
+        <h1 class="hero-title">
+          Detect Burnout Before It's <span class="gradient-text">Too Late</span>
+        </h1>
+        <p class="hero-subtitle">
+          Intelligent passive monitoring using digital footprints from existing hospital systems. 
+          No wearables. No surveys. Just smart AI analysis.
+        </p>
+        <div class="hero-buttons">
+          <a href="analytics.html" class="btn-primary">
+            <i class="fas fa-chart-line"></i>
+            View Analytics
+          </a>
+          <a href="digital-footprint.html" class="btn-secondary">
+            <i class="fas fa-fingerprint"></i>
+            How It Works
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-value" id="detectedCount">0</div>
+            <div class="stat-label">Early Detections</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value" id="preventedCount">0</div>
+            <div class="stat-label">Burnouts Prevented</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">99.2%</div>
+            <div class="stat-label">Accuracy Rate</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="floating-card card-1">
+          <i class="fas fa-heartbeat"></i>
+          <div>Real-time Monitoring</div>
+        </div>
+        <div class="floating-card card-2">
+          <i class="fas fa-brain"></i>
+          <div>AI Analysis</div>
+        </div>
+        <div class="floating-card card-3">
+          <i class="fas fa-calendar-check"></i>
+          <div>Smart Scheduling</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Overview -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Why MindEase AI?</h2>
+        <p class="section-subtitle">Advanced technology for healthcare workforce wellbeing</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon" style="background: rgba(99, 102, 241, 0.1);">
+            <i class="fas fa-fingerprint" style="color: #6366f1;"></i>
+          </div>
+          <h3>Digital Footprint Analysis</h3>
+          <p>Analyzes 6 key passive data sources from existing hospital systems without any additional burden on staff.</p>
+          <a href="digital-footprint.html" class="feature-link">
+            Learn More <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="background: rgba(16, 185, 129, 0.1);">
+            <i class="fas fa-chart-line" style="color: #10b981;"></i>
+          </div>
+          <h3>Real-Time Analytics</h3>
+          <p>Comprehensive dashboard with live stress monitoring, employee profiles, and predictive insights.</p>
+          <a href="analytics.html" class="feature-link">
+            View Dashboard <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="background: rgba(245, 158, 11, 0.1);">
+            <i class="fas fa-sync-alt" style="color: #f59e0b;"></i>
+          </div>
+          <h3>Smart Optimizer</h3>
+          <p>AI-powered shift optimization with automatic notifications to low-stress staff for potential swaps.</p>
+          <a href="optimizer.html" class="feature-link">
+            Optimize Now <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="background: rgba(139, 92, 246, 0.1);">
+            <i class="fas fa-chart-bar" style="color: #8b5cf6;"></i>
+          </div>
+          <h3>Detailed Statistics</h3>
+          <p>In-depth statistical analysis with stress distribution graphs and 7-day trend visualization.</p>
+          <a href="statistics.html" class="feature-link">
+            View Stats <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Benefits -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Key Benefits</h2>
+        <p class="section-subtitle">Transform your healthcare workforce management</p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <i class="fas fa-bell benefit-icon"></i>
+          <h3>Proactive Alerts</h3>
+          <p>Automatic notifications sent to available, low-stress staff when high-risk situations are detected</p>
+        </div>
+
+        <div class="benefit-item">
+          <i class="fas fa-shield-alt benefit-icon"></i>
+          <h3>Privacy First</h3>
+          <p>GDPR compliant with no biometric data collection - only anonymized digital activity patterns</p>
+        </div>
+
+        <div class="benefit-item">
+          <i class="fas fa-clock benefit-icon"></i>
+          <h3>Real-Time Detection</h3>
+          <p>Continuous monitoring with instant analysis to catch burnout signs before they escalate</p>
+        </div>
+
+        <div class="benefit-item">
+          <i class="fas fa-users benefit-icon"></i>
+          <h3>Team Balance</h3>
+          <p>Intelligent workload distribution ensuring fair and healthy shift assignments for all staff</p>
+        </div>
+
+        <div class="benefit-item">
+          <i class="fas fa-chart-line benefit-icon"></i>
+          <h3>Data-Driven Insights</h3>
+          <p>Comprehensive analytics and reporting for evidence-based workforce management decisions</p>
+        </div>
+
+        <div class="benefit-item">
+          <i class="fas fa-heart benefit-icon"></i>
+          <h3>Staff Wellbeing</h3>
+          <p>Improved morale, reduced turnover, and better patient care through healthy workforce management</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to Transform Your Healthcare Workforce?</h2>
+        <p>Start analyzing employee wellbeing with our advanced AI platform today.</p>
+        <a href="analytics.html" class="btn-primary btn-large">
+          <i class="fas fa-rocket"></i>
+          Get Started Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <i class="fas fa-brain"></i>
+            <span>MindEase<span class="ai-badge">AI</span></span>
+          </div>
+          <p>Privacy-first workforce wellbeing platform for Nordic healthcare organizations.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4>Product</h4>
+          <a href="digital-footprint.html">Digital Footprint</a>
+          <a href="analytics.html">Analytics</a>
+          <a href="optimizer.html">Optimizer</a>
+          <a href="statistics.html">Statistics</a>
+        </div>
+
+        <div class="footer-section">
+          <h4>Company</h4>
+          <a href="#">About Us</a>
+          <a href="#">Team</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <a href="mailto:hello@mindeaseai.com"><i class="fas fa-envelope"></i> hello@mindeaseai.com</a>
+          <a href="#"><i class="fas fa-phone"></i> +45 1234 5678</a>
+          <a href="#"><i class="fas fa-map-marker-alt"></i> Copenhagen, Denmark</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 MindEase AI. All rights reserved.</p>
+        <p>GDPR Compliant • Privacy-First • No Biometric Data</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <script src="script.js"></script>
+  <script>
+    // Animate counters on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      const detectedCount = document.getElementById('detectedCount');
+      const preventedCount = document.getElementById('preventedCount');
+      
+      setTimeout(() => {
+        animateCounter(detectedCount, 47);
+        animateCounter(preventedCount, 128);
+      }, 500);
+    });
+  </script>
 </body>
 </html>

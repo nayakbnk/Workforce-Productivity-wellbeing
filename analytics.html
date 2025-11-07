@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Analytics Dashboard | MindEase AI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <i class="fas fa-brain"></i>
+        <span>MindEase<span class="ai-badge">AI</span></span>
+      </div>
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="digital-footprint.html" class="nav-link">Digital Footprint</a>
+        <a href="analytics.html" class="nav-link active">Analytics</a>
+        <a href="optimizer.html" class="nav-link">Optimizer</a>
+        <a href="statistics.html" class="nav-link">Statistics</a>
+      </div>
+      <button class="nav-toggle" id="navToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1 class="page-title">
+        <i class="fas fa-chart-line"></i>
+        Real-Time Analytics Dashboard
+      </h1>
+      <p class="page-subtitle">Upload CSV data or connect to live hospital systems</p>
+    </div>
+  </section>
+
+  <!-- Data Upload Panel -->
+  <section class="section">
+    <div class="container">
+      <div class="upload-panel">
+        <div class="upload-section">
+          <div class="upload-icon">
+            <i class="fas fa-cloud-upload-alt"></i>
+          </div>
+          <h3>Upload Employee Data</h3>
+          <p>CSV format: employee_id, name, avg_hours, error_rate, night_shifts, shift, login_count, task_count, patients_handled</p>
+          <input type="file" id="csvFile" accept=".csv" class="file-input" />
+          <label for="csvFile" class="file-label">
+            <i class="fas fa-file-csv"></i>
+            Choose CSV File
+          </label>
+          <button id="analyzeBtn" class="btn-primary" disabled>
+            <i class="fas fa-brain"></i>
+            Analyze with AI
+          </button>
+        </div>
+
+        <div class="upload-divider">
+          <span>OR</span>
+        </div>
+
+        <div class="upload-section">
+          <div class="upload-icon">
+            <i class="fas fa-database"></i>
+          </div>
+          <h3>Connect Live System</h3>
+          <p>Configure API endpoint to pull real-time data from hospital systems</p>
+          <div class="api-config">
+            <input type="text" id="apiEndpoint" placeholder="https://api.hospital.com/staff-data" class="input-field" />
+            <input type="text" id="apiKey" placeholder="API Key" class="input-field" />
+            <button id="connectBtn" class="btn-secondary">
+              <i class="fas fa-plug"></i>
+              Connect API
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Analytics Cards -->
+      <div class="analytics-grid" id="analyticsCards">
+        <!-- Populated by JS -->
+      </div>
+
+      <!-- Employee Cards -->
+      <div class="employee-section">
+        <h3 class="subsection-title">
+          <i class="fas fa-users"></i> 
+          Employee Stress Profiles
+          <span class="count-badge" id="employeeCount">0</span>
+        </h3>
+        <div class="employee-grid" id="employeeGrid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <i class="fas fa-brain"></i>
+            <span>MindEase<span class="ai-badge">AI</span></span>
+          </div>
+          <p>Privacy-first workforce wellbeing platform for Nordic healthcare organizations.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4>Product</h4>
+          <a href="digital-footprint.html">Digital Footprint</a>
+          <a href="analytics.html">Analytics</a>
+          <a href="optimizer.html">Optimizer</a>
+          <a href="statistics.html">Statistics</a>
+        </div>
+
+        <div class="footer-section">
+          <h4>Company</h4>
+          <a href="#">About Us</a>
+          <a href="#">Team</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <a href="mailto:hello@mindeaseai.com"><i class="fas fa-envelope"></i> hello@mindeaseai.com</a>
+          <a href="#"><i class="fas fa-phone"></i> +45 1234 5678</a>
+          <a href="#"><i class="fas fa-map-marker-alt"></i> Copenhagen, Denmark</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 MindEase AI. All rights reserved.</p>
+        <p>GDPR Compliant • Privacy-First • No Biometric Data</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toastContainer" class="toast-container"></div>
+  <script src="script.js"></script>
+</body>
+</html>

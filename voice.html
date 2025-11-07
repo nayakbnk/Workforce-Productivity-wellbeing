@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voice Recognition Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      color: #007bff;
+    }
+    #transcript {
+      width: 80%;
+      min-height: 100px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-top: 20px;
+      font-size: 1.1rem;
+    }
+    button {
+      background-color: #007bff;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin: 10px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎤 Voice Recognition Demo</h1>
+
+  <div>
+    <button id="startBtn">Start Listening</button>
+    <button id="stopBtn">Stop Listening</button>
+  </div>
+
+  <div id="transcript">Your speech will appear here...</div>
+
+  <script>
+    // ✅ Cross-browser support (Chrome, Edge, Firefox*)
+    window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    if ('SpeechRecognition' in window) {
+      const recognition = new window.SpeechRecognition();
+      recognition.continuous = true; // Keep listening until stopped
+      recognition.interimResults = true; // Show partial results
+      recognition.lang = 'en-US'; // Change to 'da-DK', 'sv-SE', etc. for Nordic languages
+
+      const transcriptDiv = document.getElementById('transcript');
+      const startBtn = document.getElementById('startBtn');
+      const stopBtn = document.getElementById('stopBtn');
+
+      let finalTranscript = '';
+
+      recognition.onresult = (event) => {
+        let interimTranscript = '';
+        for (let i = event.resultIndex; i < event.results.length; ++i) {
+          if (event.results[i].isFinal) {
+            finalTranscript += event.results[i][0].transcript + ' ';
+          } else {
+            interimTranscript += event.results[i][0].transcript;
+          }
+        }
+        transcriptDiv.innerHTML = finalTranscript + '<i style=\"color:gray;\">' + interimTranscript + '</i>';
+      };
+
+      recognition.onerror = (event) => {
+        console.error('Speech recognition error:', event.error);
+      };
+
+      startBtn.onclick = () => {
+        recognition.start();
+        transcriptDiv.innerHTML = '<em>Listening...</em>';
+      };
+
+      stopBtn.onclick = () => {
+        recognition.stop();
+        transcriptDiv.innerHTML += '<p><strong>Stopped listening.</strong></p>';
+      };
+    } else {
+      alert('Speech Recognition API not supported in this browser.');
+    }
+  </script>
+</body>
+</html>

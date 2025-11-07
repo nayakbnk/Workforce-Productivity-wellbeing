@@ -1,0 +1,9 @@
+Flask==2.3.2
+deepface==0.0.88
+opencv-python==4.8.0.74
+numpy==1.26.4
+Pillow==10.0.1
+requests==2.31.0
+gunicorn==21.2.0
+# tensorflow is a dependency of deepface but installing deepface may already bring required packages.
+# If you face issues, add the appropriate tensorflow package for your environment (tensorflow or tensorflow-cpu).
